@@ -15,7 +15,7 @@ class DebugTextCommand extends \Intervention\Image\Commands\AbstractCommand
 	    $draw->setFillColor('white');
 		$draw->setStrokeWidth(2);
 		$draw->setFontSize(28);
-		$draw->setFont(dirname(dirname(__FILE__)) . '/Lato-Bold.ttf');
+		$draw->setFont(dirname(dirname(__FILE__)) . '/Lato-Black.ttf');
 
 		$img = $image->getCore();
 		$img->annotateImage($draw, 40, 40, 0, $text);
