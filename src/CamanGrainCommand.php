@@ -4,7 +4,6 @@ namespace Intervention\Image\Imagick\Commands;
 
 use \Imagick;
 use \ImagickPixel;
-use Caman\ImagickLayerable;
 
 class CamanGrainCommand extends \Intervention\Image\Commands\AbstractCommand
 {	

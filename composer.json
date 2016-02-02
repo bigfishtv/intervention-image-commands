@@ -2,7 +2,8 @@
     "name": "bigfishtv/intervention-image-commands",
     "description": "Additional commands for Intervention\\Image",
     "require": {
-        "ext-imagick": "*"
+        "ext-imagick": "*",
+        "dr-que/polynomial-regression": "^1.1"
     },
     "autoload": {
         "classmap": [
