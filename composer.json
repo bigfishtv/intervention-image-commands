@@ -1,6 +1,7 @@
 {
     "name": "bigfishtv/intervention-image-commands",
     "description": "Additional commands for Intervention\\Image",
+    "license": "MIT",
     "require": {
         "ext-imagick": "*",
         "dr-que/polynomial-regression": "^1.1"
