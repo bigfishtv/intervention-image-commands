@@ -43,7 +43,7 @@ class CamanContrastCommand extends \Intervention\Image\Commands\AbstractCommand
 
         $amt = 75;
 
-		$image->tankCurves([
+		$image->camanCurves([
 			[0,		0],
 			[$amt, 	0+$amt-$contrast],
 			[180,	255-$amt+$contrast],

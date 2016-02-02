@@ -69,7 +69,7 @@ class CamanChannelsCommand extends \Intervention\Image\Commands\AbstractCommand
         
         // i do this to closer match caman's pixel editing
         // caman tends to tint the blacks more so i cut them out in order for the color leveling to work better
-        $image->tankCurves([[0, 25], [127, 120], [255, 255]]); 
+        $image->camanCurves([[0, 25], [127, 120], [255, 255]]); 
 
         $img->levelImage((0)*$quantum, 1+($r*1.5), (1-$r)*$quantum, Imagick::CHANNEL_RED);
         $img->levelImage((0)*$quantum, 1+($g*1.5), (1-$g)*$quantum, Imagick::CHANNEL_GREEN);

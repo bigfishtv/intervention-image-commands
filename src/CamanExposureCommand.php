@@ -29,7 +29,7 @@ class CamanExposureCommand extends \Intervention\Image\Commands\AbstractCommand
         	array_reverse($ctrl2);
         }
         $points = [$ctrl1, $ctrl2];
-        $image->tankCurves($points);
+        $image->camanCurves($points);
         return $image;
         // return $image->getCore()->modulateImage(100+$exposure, 100, 100);
     }
