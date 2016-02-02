@@ -1,0 +1,19 @@
+{
+    "name": "bigfishtv/intervention-image-commands",
+    "description": "Additional commands for Intervention\\Image",
+    "autoload": {
+        "classmap": [
+            "src/CamanBlurCommand.php",
+            "src/CamanChannelsCommand.php",
+            "src/CamanContrastCommand.php",
+            "src/CamanCurvesCommand.php",
+            "src/CamanExposureCommand.php",
+            "src/CamanGammaCommand.php",
+            "src/CamanGrainCommand.php",
+            "src/CamanSaturationCommand.php",
+            "src/CamanSharpenCommand.php",
+            "src/CamanVibranceCommand.php",
+            "src/DebugTextCommand.php"
+        ]
+    }
+}
