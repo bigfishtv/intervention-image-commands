@@ -39,7 +39,45 @@ class CamanContrastCommand extends \Intervention\Image\Commands\AbstractCommand
 		
 		// return $image->gamma(pow($this->argument(0)->value()/20, -1));
 		$img = $image->getCore();
-        $contrast = $this->argument(0)->value();
+        $contrast = $this->argument(0)->value();	
+
+
+
+        /*
+		
+		// Attempt 6 - tried another method, could work but doesn't do negative contrast
+
+        list ($width, $height) = array_values($img->getImageGeometry());
+		$img->contrastStretchImage ($width * $height * 0.2, $width * $height * 0.8);
+        return $img;
+		*/
+
+
+        /*
+
+        // Attempt 5 -- tried looping over the one-trick-pony Imagick contrast function, nah
+
+        for($i = 0; $i < abs($contrast); $i ++) {
+        	$img->contrastImage($contrast > 0 ? 0 : 1);
+        }
+        return $img;
+        */
+
+
+        /*
+
+        // Attempt 4 -- tried a different Imagick contrast method, didn't match at all
+
+        $quanta = $img->getQuantumRange()['quantumRangeLong'];
+        // pr($quanta); exit;
+		$img->sigmoidalContrastImage($contrast > 0 ? true : false, abs($contrast), 0.5*$quanta);
+		return $img;
+		*/
+
+
+		
+
+		// Attempt 3 -- attempted to create contrast with curves -- actually close, might revisit
 
         $amt = 75;
 
@@ -51,7 +89,13 @@ class CamanContrastCommand extends \Intervention\Image\Commands\AbstractCommand
 		]);
 
 		return $image;
-	
+		
+		
+
+		/*
+		
+		// Attempt 2 -- attempted to use color matrix .. just wasn't right
+
 		$amt = pow(($contrast + 100)/100, 2); // caman
 
 		// This is an optimized version that uses a color matrix instead of iterating over pixels
@@ -65,9 +109,13 @@ class CamanContrastCommand extends \Intervention\Image\Commands\AbstractCommand
 			0,		0,		$amt,	-0.1,
 			0,		0,		0,		$amt,
 		]);
+		*/
 		
 		
 		/*
+
+		// Attempt 1 -- accurate but needlessly slow
+
  		$iterator = $img->getPixelIterator();
         foreach ($iterator as $row => $pixels) {
         	foreach ($pixels as $column => $pixel) {
