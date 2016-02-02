@@ -1,6 +1,9 @@
 {
     "name": "bigfishtv/intervention-image-commands",
     "description": "Additional commands for Intervention\\Image",
+    "require": {
+        "ext-imagick": "*"
+    },
     "autoload": {
         "classmap": [
             "src/CamanBlurCommand.php",
