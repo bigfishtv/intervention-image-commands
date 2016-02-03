@@ -20,7 +20,6 @@ class CamanExposureCommand extends \Intervention\Image\Commands\AbstractCommand
 	public function execute($image)
     {	
         $exposure = $this->argument(0)->value();
-        $exposure = $exposure*0.733; // i do this to adjust for the different curves method
         $p = abs($exposure) / 100;
         $ctrl1 = [0, 255*$p];
         $ctrl2 = [255 - (255*$p), 255];
@@ -31,6 +30,5 @@ class CamanExposureCommand extends \Intervention\Image\Commands\AbstractCommand
         $points = [$ctrl1, $ctrl2];
         $image->camanCurves($points);
         return $image;
-        // return $image->getCore()->modulateImage(100+$exposure, 100, 100);
     }
 }
