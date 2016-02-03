@@ -14,7 +14,7 @@ class CamanCurvesCommand extends \Intervention\Image\Commands\AbstractCommand
     {
 		bcscale(20);
         $curves = $this->argument(0)->value();
-        $channel = $this->argument(1)->value() ?: Imagick::CHANNEL_DEFAULT;
+        // $channel = $this->argument(1)->value() ?: Imagick::CHANNEL_ALL;
         $numPoints = count($curves);
 
 		$img = $image->getCore();
@@ -35,21 +35,22 @@ class CamanCurvesCommand extends \Intervention\Image\Commands\AbstractCommand
 		for ($x = 0; $x < 255; $x++) {
 			$y = (int) max(0, min(255, $regression->interpolate($coefficients, $x)));
 			// $y = (int) max(0, min(255, getCubicBezierY($curves, $x)));
+			$r = $g = $b = $y;
+			// if($channel == Imagick::CHANNEL_RED) $g = $b = $x;
+			// if($channel == Imagick::CHANNEL_GREEN) $r = $b = $x;
+			// if($channel == Imagick::CHANNEL_BLUE) $g = $b = $x;
 
-			$pixel = new ImagickPixel('rgb('.$y.','.$y.','.$y.')');
+			$pixel = new ImagickPixel('rgb('.$r.','.$g.','.$b.')');
 			$draw = new ImagickDraw();
 			$draw->setFillColor($pixel);
 			$draw->rectangle($x, 0, $x + 1, 1);
 			$gradient->drawImage($draw);
 		}
 
-		$img->clutImage($gradient);
+		$img->setImageAlphaChannel(Imagick::ALPHACHANNEL_DEACTIVATE);
+		$gradient->setImageInterpolateMethod(Imagick::INTERPOLATE_BILINEAR);
 
-		// pr(Imagick::CHANNEL_DEFAULT);
-		// pr(Imagick::CHANNEL_RED); 
-		// pr(Imagick::CHANNEL_GREEN); 
-		// pr(Imagick::CHANNEL_BLUE);
-		// exit;
+		$img->clutImage($gradient);
 
         return $img;
     }
