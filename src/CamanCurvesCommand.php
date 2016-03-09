@@ -52,7 +52,7 @@ class CamanCurvesCommand extends \Intervention\Image\Commands\AbstractCommand
 
 		$img->clutImage($gradient);
 
-        return $img;
+        return $image;
     }
 }
 

@@ -18,6 +18,6 @@ class TintCommand extends \Intervention\Image\Commands\AbstractCommand
         $draw->rectangle(0, 0, $width, $height);
 
         $img->drawImage($draw);
-        return $img;
+        return $image;
 	}
 }

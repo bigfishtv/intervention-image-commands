@@ -82,7 +82,7 @@ class CamanVibranceCommand extends \Intervention\Image\Commands\AbstractCommand
 			-$amt/1.5,		-$amt/1.5,		-$amt/1.5,		1+$amt,
 		]);
 
-		return $img;
+		return $image;
 
        	/* 
 

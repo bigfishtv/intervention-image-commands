@@ -26,6 +26,6 @@ class CamanGrainCommand extends \Intervention\Image\Commands\AbstractCommand
     	for($i=0; $i < $grain; $i ++) {
 	    	$img->addNoiseImage(Imagick::NOISE_LAPLACIAN);
 	    }
-        return $img;
+        return $image;
     }
 }

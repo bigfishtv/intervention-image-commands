@@ -27,7 +27,8 @@ class CamanChannelsCommand extends \Intervention\Image\Commands\AbstractCommand
 			0,		0,		0,		1,		0,
 			0,		0,		0,		0,		0,
 		]);
-		return $img;
+		
+		return $image;
         
         /*
 
@@ -68,8 +69,9 @@ class CamanChannelsCommand extends \Intervention\Image\Commands\AbstractCommand
         	}
        		$iterator->syncIterator();
         }
-        */
 
         return $img;
+
+        */
     }
 }
