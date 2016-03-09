@@ -21,11 +21,10 @@ class CamanChannelsCommand extends \Intervention\Image\Commands\AbstractCommand
         $b = isset($channels['blue']) ? $channels['blue'] : 0;
 
 		$img->recolorImage([
-			1,		0,		0,		$r,		0,
-			0,		1,		0,		$g,		0,
-			0,		0,		1,		$b,		0,
-			0,		0,		0,		1,		0,
-			0,		0,		0,		0,		0,
+			1,		0,		0,		$r,
+			0,		1,		0,		$g,
+			0,		0,		1,		$b,	
+			0,		0,		0,		1,
 		]);
 		
 		return $image;
