@@ -13,6 +13,7 @@
             "src/CamanContrastCommand.php",
             "src/CamanCurvesCommand.php",
             "src/CamanExposureCommand.php",
+            "src/CamanFadeCommand.php",
             "src/CamanGammaCommand.php",
             "src/CamanGrainCommand.php",
             "src/CamanSaturationCommand.php",
