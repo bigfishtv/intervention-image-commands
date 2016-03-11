@@ -20,7 +20,7 @@ class CamanExposureCommand extends \Intervention\Image\Commands\AbstractCommand
 	public function execute($image)
     {	
         $exposure = $this->argument(0)->value();
-        $p = abs($exposure) / 100;
+        $p = $exposure / 100;
         $ctrl1 = [0, 255*$p];
         $ctrl2 = [255 - (255*$p), 255];
         if($exposure < 0) {
