@@ -40,9 +40,7 @@ class TankCurvesCommand extends \Intervention\Image\Commands\AbstractCommand
 			$gradient->drawImage($draw);
 		}
 
-		$img->setImageAlphaChannel(Imagick::ALPHACHANNEL_DEACTIVATE);
 		$gradient->setImageInterpolateMethod(Imagick::INTERPOLATE_BILINEAR);
-
 		$img->clutImage($gradient);
 
         return $image;
