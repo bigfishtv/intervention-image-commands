@@ -9,7 +9,7 @@ class TankFadeCommand extends \Intervention\Image\Commands\AbstractCommand
 		$img = $image->getCore();
         $fade = $this->argument(0)->value();	
 
-		$image->camanCurves([
+		$image->tankCurves([
 			[0,		$fade],
 			[255,	255 - $fade/2]
 		]);

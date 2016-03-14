@@ -15,7 +15,7 @@ class TankExposureCommand extends \Intervention\Image\Commands\AbstractCommand
         	array_reverse($ctrl2);
         }
         $points = [$ctrl1, $ctrl2];
-        $image->camanCurves($points);
+        $image->tankCurves($points);
         return $image;
     }
 }
