@@ -2,11 +2,10 @@
 
 namespace Intervention\Image\Imagick\Commands;
 
-class CamanFadeCommand extends \Intervention\Image\Commands\AbstractCommand
+class TankFadeCommand extends \Intervention\Image\Commands\AbstractCommand
 {
     public function execute($image)
     {	
-
 		$img = $image->getCore();
         $fade = $this->argument(0)->value();	
 
@@ -16,6 +15,5 @@ class CamanFadeCommand extends \Intervention\Image\Commands\AbstractCommand
 		]);
 
 		return $image;
-		
     }
 }

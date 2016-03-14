@@ -2,7 +2,7 @@
 
 namespace Intervention\Image\Imagick\Commands;
 
-class CamanSharpenCommand extends \Intervention\Image\Commands\AbstractCommand
+class TankSharpenCommand extends \Intervention\Image\Commands\AbstractCommand
 {	
 	public function execute($image)
     {	

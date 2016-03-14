@@ -8,17 +8,18 @@
     },
     "autoload": {
         "classmap": [
-            "src/CamanBlurCommand.php",
-            "src/CamanChannelsCommand.php",
-            "src/CamanContrastCommand.php",
-            "src/CamanCurvesCommand.php",
-            "src/CamanExposureCommand.php",
-            "src/CamanFadeCommand.php",
-            "src/CamanGammaCommand.php",
-            "src/CamanGrainCommand.php",
-            "src/CamanSaturationCommand.php",
-            "src/CamanSharpenCommand.php",
-            "src/CamanVibranceCommand.php",
+            "src/TankBlurCommand.php",
+            "src/TankChannelsCommand.php",
+            "src/TankContrastCommand.php",
+            "src/TankCurvesBezierCommand.php",
+            "src/TankCurvesCommand.php",
+            "src/TankExposureCommand.php",
+            "src/TankFadeCommand.php",
+            "src/TankGammaCommand.php",
+            "src/TankGrainCommand.php",
+            "src/TankSaturationCommand.php",
+            "src/TankSharpenCommand.php",
+            "src/TankVibranceCommand.php",
             "src/DebugTextCommand.php"
         ]
     }

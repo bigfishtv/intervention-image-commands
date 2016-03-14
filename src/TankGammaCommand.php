@@ -2,12 +2,12 @@
 
 namespace Intervention\Image\Imagick\Commands;
 
-class CamanGammaCommand extends \Intervention\Image\Commands\AbstractCommand
+class TankGammaCommand extends \Intervention\Image\Commands\AbstractCommand
 {	
 	public function execute($image)
     {	
         $gamma = $this->argument(0)->value();
-        $gamma = pow($gamma, -1); // CamanJS equivalent
+        $gamma = pow($gamma, -1);
         return $image->gamma($gamma);
     }
 }

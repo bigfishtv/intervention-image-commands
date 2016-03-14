@@ -2,7 +2,7 @@
 
 namespace Intervention\Image\Imagick\Commands;
 
-class CamanSaturationCommand extends \Intervention\Image\Commands\AbstractCommand
+class TankSaturationCommand extends \Intervention\Image\Commands\AbstractCommand
 {	
 	public function execute($image)
     {	
