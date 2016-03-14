@@ -6,7 +6,7 @@ use \Imagick;
 use \ImagickPixel;
 use \ImagickDraw;
 
-class TankCurvesCommand extends \Intervention\Image\Commands\AbstractCommand
+class TankCurvesBezierCommand extends \Intervention\Image\Commands\AbstractCommand
 {
     public function execute($image)
     {
