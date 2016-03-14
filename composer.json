@@ -19,6 +19,7 @@
             "src/TankGrainCommand.php",
             "src/TankSaturationCommand.php",
             "src/TankSharpenCommand.php",
+            "src/TankTemperatureCommand.php",
             "src/TankVibranceCommand.php",
             "src/DebugTextCommand.php"
         ]
