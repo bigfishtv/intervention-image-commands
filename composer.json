@@ -16,6 +16,7 @@
             "src/TankExposureCommand.php",
             "src/TankFadeCommand.php",
             "src/TankGammaCommand.php",
+            "src/TankGradientMapCommand.php",
             "src/TankGrainCommand.php",
             "src/TankSaturationCommand.php",
             "src/TankSharpenCommand.php",
