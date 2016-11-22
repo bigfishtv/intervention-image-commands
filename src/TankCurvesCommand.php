@@ -38,7 +38,9 @@ class TankCurvesCommand extends \Intervention\Image\Commands\AbstractCommand
             $gradient->drawImage($draw);
         }
 
-        $gradient->setImageInterpolateMethod(Imagick::INTERPOLATE_BILINEAR);
+        if (method_exists($gradient, 'setImageInterpolateMethod')) {
+            $gradient->setImageInterpolateMethod(Imagick::INTERPOLATE_BILINEAR);
+        }
         
         $img->clutImage($gradient);
 

@@ -31,7 +31,9 @@ class TankGradientMapCommand extends \Intervention\Image\Commands\AbstractComman
             $gradient->drawImage($draw);
         }
 
-        $gradient->setImageInterpolateMethod(Imagick::INTERPOLATE_BILINEAR);
+        if (method_exists($gradient, 'setImageInterpolateMethod')) {
+            $gradient->setImageInterpolateMethod(Imagick::INTERPOLATE_BILINEAR);
+        }
         
         $img->clutImage($gradient);
 
