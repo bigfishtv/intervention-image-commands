@@ -26,12 +26,22 @@ class TankTemperatureCommand extends \Intervention\Image\Commands\AbstractComman
         $b = $b < 0 ? 0 : $b > 255 ? 255 : $b;
         $b = $b / 255;
 
-        $img->recolorImage([
-            $r, 0,  0,  0,
-            0,  $g, 0,  0,
-            0,  0,  $b, 0,
-            0,  0,  0,  1,
-        ]);
+        if (method_exists($img, 'colorMatrixImage')) {
+            $img->colorMatrixImage([
+                $r, 0,  0,  0, 0,
+                0,  $g, 0,  0, 0,
+                0,  0,  $b, 0, 0,
+                0,  0,  0,  1, 0,
+                0,  0,  0,  0, 1,
+            ]);
+        } else {
+            $img->recolorImage([
+                $r, 0,  0,  0,
+                0,  $g, 0,  0,
+                0,  0,  $b, 0,
+                0,  0,  0,  1,
+            ]);
+        }
 
         return $image;
     }

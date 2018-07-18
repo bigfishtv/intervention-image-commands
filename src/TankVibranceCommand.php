@@ -13,12 +13,22 @@ class TankVibranceCommand extends \Intervention\Image\Commands\AbstractCommand
         $v1 = $amt + 1;
         $v2 = -$amt / 1.5;
 
-        $img->recolorImage([
-            $v1, $v2, $v2, 0,
-            $v2, $v1, $v2, 0,
-            $v2, $v2, $v1, 0,
-            $v2, $v2, $v2, $v1,
-        ]);
+        if (method_exists($img, 'colorMatrixImage')) {
+            $img->colorMatrixImage([
+                $v1, $v2, $v2, 0,   0,
+                $v2, $v1, $v2, 0,   0,
+                $v2, $v2, $v1, 0,   0,
+                $v2, $v2, $v2, $v1, 0,
+                0,   0,   0,   0,   1,
+            ]);
+        } else {
+            $img->recolorImage([
+                $v1, $v2, $v2, 0,
+                $v2, $v1, $v2, 0,
+                $v2, $v2, $v1, 0,
+                $v2, $v2, $v2, $v1,
+            ]);
+        }
 
         return $image;
     }

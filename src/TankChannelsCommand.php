@@ -17,12 +17,22 @@ class TankChannelsCommand extends \Intervention\Image\Commands\AbstractCommand
         $g = isset($channels['green']) ? $channels['green'] : 0;
         $b = isset($channels['blue']) ? $channels['blue'] : 0;
 
-        $img->recolorImage([
-            1, 0, 0, $r,
-            0, 1, 0, $g,
-            0, 0, 1, $b,
-            0, 0, 0, 1,
-        ]);
+        if (method_exists($img, 'colorMatrixImage')) {
+            $img->colorMatrixImage([
+                1, 0, 0, 0, $r,
+                0, 1, 0, 0, $g,
+                0, 0, 1, 0, $b,
+                0, 0, 0, 1, 0,
+                0, 0, 0, 0, 1,
+            ]);
+        } else {
+            $img->recolorImage([
+                1, 0, 0, $r,
+                0, 1, 0, $g,
+                0, 0, 1, $b,
+                0, 0, 0, 1,
+            ]);
+        }
 
         return $image;
     }
